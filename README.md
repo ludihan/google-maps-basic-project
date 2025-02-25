@@ -11,5 +11,5 @@ npm install
 ```
 5. Rode o server e acesse pelo http://localhost e sua porta desejada (aqui seria a porta 3000 no endereço "http://localhost:3000"):
 ```sh
-npm server.js 3000
+node server.js 3000
 ```
