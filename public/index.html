@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto MAPAS</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <div id="map" class="transition"></div>
+    <div id="menu" class="overlay transition">
+        <h1>Pontos</h1>
+        <div>
+            <form id="pontoForm">
+                <p>Novo ponto:</p>
+                <label for="Nome">Nome (opcional)</label>
+                <br>
+                <input autocomplete="off" type="text" id="nome" placeholder="Unifor" name="Nome" />
+                <br>
+                <br>
+                <div>
+
+                    <button type="button" id="latlngMouseClick">Escolher coordenadas com mouse</button>
+                </div>
+                <label for="Latitude">Latitude</label>
+                <br>
+                <input autocomplete="off" type="number" step="any" id="lat" required placeholder="-3.768775296197842"
+                    name="Latitude" />
+                <br>
+                <br>
+                <label for="Longitude">Longitude</label>
+                <br>
+                <input autocomplete="off" type="number" step="any" id="lng" required placeholder="-38.47808246121602"
+                    name="Longitude" />
+                <br>
+                <br>
+                <p class="error" id="formError">Preencha os campos corretamente</p>
+                <div>
+                    <button type="button" id="sendForm">Adicionar</button>
+                    <button type="button" id="cancelForm">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <button id="novoPontoBtn" title="Adicionar novo ponto"><span class="material-icons">add</span></button>
+        </div>
+        <hr>
+        <div id="pontos">
+        </div>
+    </div>
+    <button id="menuBtn" title="Abrir menu" class="overlay transition"><span class="material-icons">menu</span></button>
+
+    <!-- prettier-ignore -->
+    <script>
+        (g => {var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a)})); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))})({
+            key: "SUA CHAVE AQUI",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
+</body>
+
+</html>

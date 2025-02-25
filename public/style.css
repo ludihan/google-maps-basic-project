@@ -1,0 +1,118 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.transition {
+    transition-duration: .3s;
+    transition-property: transform, width, height;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.overlay {
+    z-index: 999;
+    position: absolute;
+}
+
+#menuBtn {
+    size: 100px;
+    padding: 0 2vh;
+    margin: 1vh 1vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+    list-style: none;
+    font-size: 2em;
+    outline: 0;
+    background: #fff;
+}
+
+#menu {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+    height: 100%;
+    left: -15vw;
+    width: 15vw;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu div,
+hr {
+    min-width: 10vw;
+    max-width: 100%;
+}
+
+#menu form {
+    display: none;
+    text-align: center;
+    max-width: 10vw
+}
+
+label {
+    text-align: left;
+    float: left;
+}
+
+button {
+    transition-duration: 0.4s;
+    text-align: center;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+button::hover {
+    color: #222222;
+}
+
+#novoPontoBtn {
+    min-width: 10vw;
+    max-width: 13vw;
+}
+
+.error {
+    display: none;
+    color: red;
+}
+
+#pontos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ponto {
+    display: flex;
+}
+
+.pontoNome {
+    flex-grow: 1;
+}
+
+.pontoSemNome {
+    flex-grow: 1;
+    font-style: italic;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (width<=800px) {
+    #menu {
+        height: 100%;
+        left: -100vw;
+        width: 100%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
